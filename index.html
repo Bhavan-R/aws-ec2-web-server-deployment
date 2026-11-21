@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AWS EC2 Web Server Deployment</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b1220;color:#e8eef8;line-height:1.6}
+header{padding:22px 8%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #27344a}
+.logo{font-weight:700;color:#ffb454;letter-spacing:.4px}nav a{color:#c7d5e8;text-decoration:none;margin-left:20px}
+.hero{padding:85px 8% 70px;background:linear-gradient(135deg,#101d34,#142b49)}
+.tag{display:inline-block;border:1px solid #49627f;border-radius:30px;padding:6px 13px;color:#b6d5ff;font-size:13px}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.12;margin:22px 0}h1 span{color:#ffb454}
+.hero p{max-width:680px;color:#c4d1e2;font-size:18px}
+.btn{display:inline-block;margin-top:18px;background:#ffb454;color:#151b26;padding:12px 18px;border-radius:8px;font-weight:700;text-decoration:none}
+section{padding:55px 8%}.section-title{font-size:28px;margin:0 0 10px}.muted{color:#aabbd1}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:26px}
+.card{border:1px solid #273852;background:#121d2e;border-radius:14px;padding:22px}.card h3{color:#ffb454;margin-top:0}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:24px}
+.step{border-left:3px solid #ffb454;padding:14px 18px;background:#111c2b;border-radius:8px}.step strong{display:block;margin-bottom:6px}
+footer{text-align:center;padding:30px;border-top:1px solid #27344a;color:#9eafc4}
+</style>
+</head>
+<body>
+<header><div class="logo">☁ Cloud Project</div><nav><a href="#overview">Overview</a><a href="#services">Services</a><a href="#deployment">Deployment</a></nav></header>
+<div class="hero"><span class="tag">AWS CLOUD • BEGINNER PROJECT</span>
+<h1>AWS EC2 <span>Web Server</span><br>Deployment</h1>
+<p>A beginner cloud project demonstrating identity and access management fundamentals, EC2 provisioning, network security configuration, and hosting a static website on an Amazon EC2 instance.</p>
+<a class="btn" href="#overview">Explore the project ↓</a></div>
+<section id="overview"><h2 class="section-title">Project Overview</h2><p class="muted">This project walks through launching a virtual server in AWS, configuring access securely, installing a web server, and publishing a simple website accessible through a browser.</p>
+<div class="cards"><div class="card"><h3>Identity & Access</h3><p>Explore IAM users, groups, roles, policies, and permission boundaries. Follow least-privilege access practices.</p></div>
+<div class="card"><h3>Compute</h3><p>Launch and configure a Linux virtual machine using Amazon EC2.</p></div>
+<div class="card"><h3>Network Security</h3><p>Use a security group to control inbound and outbound traffic to the instance.</p></div>
+<div class="card"><h3>Web Hosting</h3><p>Install a web server and serve a basic HTML page from the EC2 instance.</p></div></div></section>
+<section id="services"><h2 class="section-title">AWS Services & Concepts</h2><div class="cards">
+<div class="card"><h3>IAM</h3><p>Identity and Access Management controls who can access AWS resources and what actions they can perform.</p></div>
+<div class="card"><h3>Amazon EC2</h3><p>Elastic Compute Cloud provides resizable compute capacity in the cloud through virtual server instances.</p></div>
+<div class="card"><h3>Security Groups</h3><p>Instance-level virtual firewalls that regulate network traffic using rules.</p></div>
+<div class="card"><h3>Apache Web Server</h3><p>HTTP server software used here to serve the website to visitors.</p></div></div></section>
+<section id="deployment"><h2 class="section-title">Deployment Flow</h2><p class="muted">The following summarizes the intended deployment workflow.</p><div class="steps">
+<div class="step"><strong>01 · IAM</strong>Review identities and permissions. Use secure access and least privilege.</div>
+<div class="step"><strong>02 · EC2</strong>Launch a Linux instance and select an appropriate instance type.</div>
+<div class="step"><strong>03 · Security Group</strong>Allow SSH only from your IP; allow HTTP traffic for website access.</div>
+<div class="step"><strong>04 · Web Server</strong>Install and start Apache, then place the website files in its document root.</div>
+<div class="step"><strong>05 · Verify</strong>Open the instance's public IPv4 address in a browser and confirm the site loads.</div>
+</div></section>
+<footer>Student Cloud Practice Project · AWS IAM & EC2 · Module 02</footer>
+</body></html>
