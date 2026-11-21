@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AWS EC2 Web Server Deployment</title>
+<style>
+:root{--bg:#0b1220;--panel:#111c2e;--panel2:#17243a;--text:#eaf1fb;--muted:#a9b8cc;--blue:#67b7ff;--green:#5be0ae;--line:#263850}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#0b1220,#101b2d 60%,#0d2434);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif}
+.wrap{max-width:1120px;margin:auto;padding:28px 22px 60px}.nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px 0 24px}.brand{font-weight:800;letter-spacing:.4px}.brand span{color:#ff9900}.nav a{color:var(--muted);text-decoration:none;margin-left:18px;font-size:14px}.hero{padding:64px 0 38px;display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}.tag{display:inline-block;border:1px solid #315071;background:#12243b;color:#b9dcff;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700;letter-spacing:1px}.hero h1{font-size:clamp(36px,5vw,58px);line-height:1.05;margin:18px 0}.hero h1 em{font-style:normal;color:var(--blue)}.hero p{color:var(--muted);line-height:1.7;max-width:650px}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{display:inline-block;padding:12px 17px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px}.primary{background:#1685dc;color:white}.secondary{border:1px solid var(--line);color:var(--text)}.server-card{background:linear-gradient(180deg,#17263b,#101b2b);border:1px solid #30445f;border-radius:18px;padding:24px;box-shadow:0 18px 50px #0003}.server-card h3{margin:0 0 8px}.server-card p{margin:0;color:var(--muted);font-size:13px}.status{display:flex;align-items:center;gap:9px;margin:18px 0 22px;color:var(--green);font-weight:700;font-size:14px}.dot{width:9px;height:9px;background:var(--green);border-radius:50%;box-shadow:0 0 12px #5be0ae66}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.stat{background:#0d1726;border:1px solid var(--line);border-radius:12px;padding:13px}.stat small{display:block;color:var(--muted);font-size:11px;margin-bottom:6px}.stat strong{font-size:15px}.section{margin-top:28px}.section h2{font-size:25px;margin-bottom:8px}.section .sub{color:var(--muted);margin-top:0;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px}.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px}.card .icon{font-size:23px}.card h3{margin:12px 0 8px}.card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}.step{border:1px solid var(--line);background:var(--panel2);border-radius:12px;padding:16px}.step b{color:var(--blue);font-size:12px}.step h4{margin:8px 0;font-size:14px}.step p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}.callout{border:1px solid #2e5675;background:#10243a;border-radius:14px;padding:18px;color:#c9e6ff;line-height:1.65;margin-top:18px}.footer{margin-top:45px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:40px}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.nav a{margin-left:8px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.nav{align-items:flex-start}.nav nav{display:none}.wrap{padding:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="nav">
+  <div class="brand"><span>☁</span> Cloud Project</div>
+  <nav><a href="#overview">Overview</a><a href="#architecture">Workflow</a><a href="#details">Configuration</a></nav>
+</header>
+<section class="hero" id="overview">
+  <div>
+    <span class="tag">MODULE 02 · DAY 6–10</span>
+    <h1>AWS IAM &amp;<br><em>EC2 Web Server</em></h1>
+    <p>A hands-on cloud infrastructure project focused on launching a Linux virtual server, configuring network access securely, and preparing a web server to host a static HTML website.</p>
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/Bhavan-R/aws-ec2-web-server-deployment" target="_blank" rel="noopener">View GitHub Repository ↗</a>
+      <a class="btn secondary" href="#details">Explore project</a>
+    </div>
+  </div>
+  <aside class="server-card">
+    <h3>EC2 Instance Overview</h3>
+    <p>Amazon Elastic Compute Cloud · Linux</p>
+    <div class="status"><span class="dot"></span> Instance running · 3/3 checks passed</div>
+    <div class="stats">
+      <div class="stat"><small>INSTANCE TYPE</small><strong>t3.micro</strong></div>
+      <div class="stat"><small>REGION</small><strong>Sydney, AU</strong></div>
+      <div class="stat"><small>OPERATING SYSTEM</small><strong>Amazon Linux 2023</strong></div>
+      <div class="stat"><small>PUBLIC IPv4</small><strong>3.25.61.8</strong></div>
+    </div>
+  </aside>
+</section>
+<section class="section" id="details">
+  <h2>Project Objectives</h2>
+  <p class="sub">Core skills practiced during the cloud deployment exercise.</p>
+  <div class="grid">
+    <article class="card"><div class="icon">🔐</div><h3>Identity &amp; Access</h3><p>Understand IAM users, groups, roles, policies, permissions, and the principle of least privilege.</p></article>
+    <article class="card"><div class="icon">🖥️</div><h3>Compute in the Cloud</h3><p>Provision and configure a virtual Linux server using Amazon EC2.</p></article>
+    <article class="card"><div class="icon">🛡️</div><h3>Network Security</h3><p>Use security group rules to control inbound SSH administration and HTTP web traffic.</p></article>
+  </div>
+</section>
+<section class="section" id="architecture">
+  <h2>Deployment Workflow</h2>
+  <p class="sub">The intended path from cloud infrastructure to a browser-accessible website.</p>
+  <div class="steps">
+    <div class="step"><b>STEP 01</b><h4>Launch EC2</h4><p>Create an Amazon Linux virtual machine.</p></div>
+    <div class="step"><b>STEP 02</b><h4>Configure Network</h4><p>Assign public IP and set inbound rules.</p></div>
+    <div class="step"><b>STEP 03</b><h4>Connect</h4><p>Access the instance through secure SSH.</p></div>
+    <div class="step"><b>STEP 04</b><h4>Install Apache</h4><p>Set up the HTTP server and website files.</p></div>
+    <div class="step"><b>STEP 05</b><h4>Test Website</h4><p>Verify the page loads over HTTP.</p></div>
+  </div>
+  <div class="callout"><strong>Deployment note:</strong> EC2 infrastructure is provisioned and healthy. Web-server installation and public website verification are the remaining steps.</div>
+</section>
+<section class="section">
+  <h2>Infrastructure Configuration</h2>
+  <p class="sub">Current EC2 configuration summary.</p>
+  <div class="grid">
+    <article class="card"><h3>Compute</h3><p>Instance: my-web-server<br>Type: t3.micro<br>OS: Amazon Linux 2023<br>Storage: 8 GiB gp3</p></article>
+    <article class="card"><h3>Network &amp; Security</h3><p>SSH (TCP 22): restricted to configured administrator IP<br>HTTP (TCP 80): internet access enabled<br>Public IPv4: 3.25.61.8</p></article>
+    <article class="card"><h3>Project Repository</h3><p>Source files and deployment notes are maintained in GitHub.</p><p style="margin-top:12px"><a style="color:#67b7ff" href="https://github.com/Bhavan-R/aws-ec2-web-server-deployment" target="_blank" rel="noopener">Open repository ↗</a></p></article>
+  </div>
+</section>
+<footer class="footer"><span>Cloud Learning Project · AWS IAM &amp; EC2</span><span>Built for hands-on cloud practice</span></footer>
+</div>
+</body>
+</html>
